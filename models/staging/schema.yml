@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: stg_employee_attrition
+    description: "Cleaned staging model for raw HR attrition data"
+    columns:
+      - name: employee_id
+        description: "ID for each employee"
+        tests:
+          - not_null
+          
+
+      - name: attrition
+        description: "Whether the employee left the company"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Yes', 'No']
+
+      - name: department
+        description: "Department where the employee works"
+      - name: jobrole
+        description: "Job title or role of the employee"
+      - name: age
+        description: "Age of the employee"
+      - name: gender
+        description: "Gender of the employee"

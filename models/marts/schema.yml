@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: employee_attrition_summary
+    description: "Aggregated summary of attrition by department, jobrole, and gender"
+    columns:
+      - name: department
+        description: "Department of the employee"
+      - name: jobrole
+        description: "Job role of the employee"
+      - name: gender
+        description: "Gender"
+      - name: total_employees
+        description: "Count of employees in each group"
+        tests:
+          - not_null
+      - name: attrition_count
+        description: "How many employees left"
+      - name: attrition_rate_percent
+        description: "Attrition rate (%)"
+      - name: avg_monthly_income
+        description: "Average monthly salary"
+      - name: avg_age
+        description: "Average age"
+      - name: avg_tenure
+        description: "Average years at company"
